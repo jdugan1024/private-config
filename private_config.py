@@ -17,6 +17,7 @@ class PrivateConfig(object):
         self._data = {}
 
         cfg = ConfigParser.ConfigParser()
+        cfg.optionxform = str
         cfg.read(filename)
 
         for k, v in cfg.items(section):
