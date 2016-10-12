@@ -1,7 +1,9 @@
 import ConfigParser
 
+
 class PrivateConfigKeyError(Exception):
     pass
+
 
 class PrivateConfig(object):
     """Simple class for storing private items.
@@ -29,9 +31,8 @@ class PrivateConfig(object):
     def __getattr__(self, name):
         try:
             return self._data[name]
-        except KeyError, e:
+        except KeyError as e:
             raise PrivateConfigKeyError("unable to find entry for %s in %s, section [%s]" % (name, self.filename, self.section))
-
 
     def __contains__(self, name):
         return name in self._data
