@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='private-config',
-    version='1.0',
+    version='1.1',
     author='Jon M. Dugan',
     author_email='jdugan@x1024.net',
     description='Simple way to keep private data out of config files.',
