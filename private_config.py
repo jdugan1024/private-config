@@ -1,4 +1,7 @@
-import ConfigParser
+try:
+    import configparser
+except:
+    from six.moves import configparser
 
 
 class PrivateConfigKeyError(Exception):
@@ -18,7 +21,7 @@ class PrivateConfig(object):
         self.type_map = type_map
         self._data = {}
 
-        cfg = ConfigParser.ConfigParser()
+        cfg = configparser.ConfigParser()
         cfg.optionxform = str
         cfg.read(filename)
 

@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='private-config',
@@ -8,4 +8,5 @@ setup(
     description='Simple way to keep private data out of config files.',
     long_description=open("README.txt").read(),
     py_modules=['private_config'],
+    install_requires=['six==1.10.0'],
 )
